@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150413180434) do
 
   create_table "shots", force: :cascade do |t|
     t.boolean "made"
-    t.integer "type"
+    t.integer "value"
     t.integer "player_id"
   end
 
