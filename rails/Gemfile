@@ -3,9 +3,14 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 gem 'rails-api'
 gem 'pg'
+gem 'rest-client'
+gem 'devise'
+gem 'jbuilder' # used for serialization of models into JSON
+gem 'kaminari' # adds pagination to ActiveModels
 
 group :test, :development do
   gem 'spring'
+  gem 'pry'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end
