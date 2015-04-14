@@ -65,10 +65,10 @@ module('Integration - Teams Page', {
   }
 });
 
-test('Should list all teams and number of players', function(assert) {
+test('Should list all teams', function(assert) {
   visit('/teams').then(function() {
-    assert.equal(find('a:contains("Lava Sharks (2)")').length, 1);
-    assert.equal(find('a:contains("Killer Ninjas (1)")').length, 1);
+    assert.equal(find('a:contains("Lava Sharks")').length, 1);
+    assert.equal(find('a:contains("Killer Ninjas")').length, 1);
   });
 });
 
