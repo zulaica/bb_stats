@@ -50,3 +50,11 @@ test('Should list all teams', function(assert) {
     assert.equal(find('a:contains("Killer Ninjas")').length, 1);
   });
 });
+
+test('Should be able to navigate to a team page', function(assert) {
+  visit('/teams').then(function() {
+    click('a:contains("Lava Sharks")').then(function() {
+      assert.equal(find('h4').text(), 'Lava Sharks');
+    });
+  });
+});
