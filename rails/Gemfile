@@ -5,7 +5,8 @@ gem 'rails-api'
 gem 'pg'
 gem 'rest-client'
 gem 'devise'
-gem 'jbuilder' # used for serialization of models into JSON
+gem 'active_model_serializers'
+# gem 'jbuilder' # used for serialization of models into JSON
 gem 'kaminari' # adds pagination to ActiveModels
 
 group :test, :development do

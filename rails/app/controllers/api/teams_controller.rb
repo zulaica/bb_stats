@@ -2,7 +2,10 @@ module Api
   class TeamsController < Api::BaseController
 
     def index
-      render json: Team.all
+      @teams = Team.all
+      respond_to do |format|
+        format.json { render json: @teams }
+      end
     end
 
     def create

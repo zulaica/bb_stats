@@ -2,7 +2,10 @@ module Api
   class PlayersController < Api::BaseController
 
     def index
-      render json: Player.all
+      @players = Player.all
+      respond_to do |format|
+        format.json { render json: @players }
+      end
     end
 
     def create
