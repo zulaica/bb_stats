@@ -19,3 +19,11 @@ test('Should welcome me to BBWDTF', function(assert) {
     assert.equal(find('h1').text(), 'Welcome to BBWDTF');
   });
 });
+
+test('Should allow navigating back to root from another page', function(assert) {
+  visit('/teams').then(function() {
+    click('a:contains("Home")').then(function() {
+      assert.notEqual(find('h3').text(), 'Team');
+    });
+  });
+});
