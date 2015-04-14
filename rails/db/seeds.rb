@@ -6,12 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Team.create([
+teams = Team.create([
   { name: "Lightning Tigers",
-    location: "Tillamook, OR" }
+    location: "Tillamook, OR" },
+  { name: "Lava Sharks",
+    location: "Albany, OR" },
+  { name: "Space Panthers",
+    location: "Eugene, OR" }
   ])
 
-Player.create([
-  { name: "Bob",
-    number: 42 }
-  ])
+Player.create(name: "Bob", number: "42", team: teams.first)
