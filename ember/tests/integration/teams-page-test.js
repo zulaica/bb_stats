@@ -21,9 +21,30 @@ module('Integration - Teams Page', {
       }
     ];
 
+    var players = [
+      {
+        id: 2,
+        name: "Eduardo",
+        number: "10",
+        team_id: 2
+      },
+      {
+        id: 3,
+        name: "Kumiko",
+        number: "35",
+        team_id: 3
+      },
+      {
+        id: 4,
+        name: "Jose",
+        number: "10",
+        team_id: 2
+      },
+    ];
+
     server = new Pretender(function() {
       this.get('/api/teams', function(request) {
-        return [200, {"Content-Type": "applicaton/json"}, JSON.stringify({teams: teams})];
+        return [200, {"Content-Type": "applicaton/json"}, JSON.stringify({teams: teams, players: players})];
       });
 
       this.get('api/teams/:id', function(request) {
@@ -33,7 +54,7 @@ module('Integration - Teams Page', {
           }
         });
 
-        return [200, {"Content-Type": "application/json"}, JSON.stringify({team: team})];
+        return [200, {"Content-Type": "application/json"}, JSON.stringify({team: team, players: players})];
 
       });
     });
@@ -44,10 +65,10 @@ module('Integration - Teams Page', {
   }
 });
 
-test('Should list all teams', function(assert) {
+test('Should list all teams and number of players', function(assert) {
   visit('/teams').then(function() {
-    assert.equal(find('a:contains("Lava Sharks")').length, 1);
-    assert.equal(find('a:contains("Killer Ninjas")').length, 1);
+    assert.equal(find('a:contains("Lava Sharks (2)")').length, 1);
+    assert.equal(find('a:contains("Killer Ninjas (1)")').length, 1);
   });
 });
 

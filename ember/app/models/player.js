@@ -2,6 +2,6 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  location: DS.attr('string'),
-  players: DS.hasMany('player', { async: true })
+  number: DS.attr('number'),
+  team: DS.belongsTo('team', { async: true })
 });

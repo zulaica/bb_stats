@@ -2,7 +2,8 @@ module Api
   class PlayersController < Api::BaseController
 
     def index
-      @players = Player.all
+      @team = find_team
+      @players = @team.players
       respond_to do |format|
         format.json { render json: @players }
       end
@@ -18,6 +19,10 @@ module Api
     end
 
     private
+
+      def find_team
+        team = Team.find(params.fetch(:team_id))
+      end
 
       def player_params
         params.require(:player).permit(:name, :number, :team_id)

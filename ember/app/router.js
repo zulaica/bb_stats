@@ -6,10 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // this.route('teams');
-  // this.resource('team', { path: '/teams/:team_id'});
   this.resource('teams', function() {
-    this.route('show', {path: ':team_id'});
+    this.route('show', {path: ':team_id'}, function() {
+      this.route('players');
+    });
   });
 });
 

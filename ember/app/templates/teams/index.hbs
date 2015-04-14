@@ -1,3 +1,5 @@
-{{#each}}
-  {{link-to name 'teams.show' this}}
+{{#each team in this}}
+  {{~#link-to 'teams.show' team}}
+    {{team.name}} ({{team.players.length}})
+  {{~/link-to}}
 {{/each}}
