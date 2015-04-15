@@ -14,8 +14,11 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      PUSHER_OPTS: {
+        key: '64c5a7610caea2d03ced',
+        connection: {},
+        logAllEvents: false
+      }
     }
   };
 

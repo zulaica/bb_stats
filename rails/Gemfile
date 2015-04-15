@@ -6,14 +6,16 @@ gem 'pg'
 gem 'rest-client'
 gem 'devise'
 gem 'active_model_serializers'
-# gem 'jbuilder' # used for serialization of models into JSON
 gem 'kaminari' # adds pagination to ActiveModels
+gem 'pusher'
+
 
 group :test, :development do
   gem 'spring'
   gem 'pry'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'dotenv-rails'  
 end
 
 
