@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('teams', function() {
+  this.resource('teams', {path: '/'}, function() {
     this.route('show', {path: ':team_id'}, function() {
       this.route('players');
     });

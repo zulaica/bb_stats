@@ -1,6 +1,9 @@
-<hr>
-<code>/templates/teams/show.hbs</code>
-
 <h4>{{model.name}}</h4>
 
-{{outlet}}
+<dl>
+  {{#each player in model.players}}
+    <dt>{{player.name}}</dt>
+    <dd>number: {{player.number}}</dd>
+    <dd>player id: {{player.id}}</dd>
+    {{/each}}
+</dl>
