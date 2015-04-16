@@ -1,9 +1,18 @@
 <h4>{{model.name}}</h4>
 
-<dl>
-  {{#each player in model.players}}
-    <dt>{{player.name}}</dt>
-    <dd>number: {{player.number}}</dd>
-    <dd>player id: {{player.id}}</dd>
+<table>
+  <tbody>
+    {{#each player in model.players}}
+    <tr>
+      <td>{{player.name}}</td>
+      <td>{{player.number}}</td>
+    </tr>
     {{/each}}
-</dl>
+  </tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+    </tr>
+  </thead>
+</table>
